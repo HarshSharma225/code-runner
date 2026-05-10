@@ -1,0 +1,254 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0f0f0f;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  border-bottom: 1px solid #222;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-dot {
+  width: 12px;
+  height: 12px;
+  background: #5cff8f;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.title {
+  font-family: "Syne", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.badge {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  background: #1e1e1e;
+  color: #5cff8f;
+  border: 1px solid #5cff8f44;
+  padding: 3px 10px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+.main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 32px;
+  gap: 24px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 12px;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.green { background: #5cff8f; }
+.dot.blue  { background: #5b9fff; }
+.dot.red   { background: #ff5c5c; }
+
+.editor-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.code-editor {
+  flex: 1;
+  background: #141414;
+  color: #e8e8e8;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  resize: none;
+  min-height: 380px;
+  outline: none;
+  transition: border-color 0.2s;
+  tab-size: 4;
+}
+
+.code-editor:focus {
+  border-color: #5cff8f55;
+}
+
+.button-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn {
+  font-family: "Syne", sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.15s;
+}
+
+.run-btn {
+  background: #5cff8f;
+  color: #0f0f0f;
+  flex: 1;
+}
+
+.run-btn:hover:not(:disabled) {
+  background: #7dffaa;
+  transform: translateY(-1px);
+}
+
+.run-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.clear-btn {
+  background: #1e1e1e;
+  color: #aaa;
+  border: 1px solid #2a2a2a;
+}
+
+.clear-btn:hover {
+  background: #262626;
+  color: #ccc;
+}
+
+.play-icon {
+  font-size: 0.75rem;
+}
+
+.output-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.output-box {
+  flex: 1;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 380px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.88rem;
+  overflow: auto;
+}
+
+.output-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.7;
+}
+
+.output-text.success {
+  color: #5cff8f;
+}
+
+.output-text.error-text {
+  color: #ff7070;
+}
+
+.placeholder-msg {
+  color: #333;
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
+
+.placeholder-msg strong {
+  color: #444;
+}
+
+.status-msg {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.timeout-badge {
+  display: inline-block;
+  background: #ff5c5c22;
+  color: #ff7070;
+  border: 1px solid #ff5c5c44;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  font-family: "Syne", sans-serif;
+  font-weight: 700;
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid transparent;
+  border-top-color: #0f0f0f;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.6s linear infinite;
+}
+
+.spinner.dark {
+  border-top-color: #5cff8f;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .header {
+    padding: 14px 20px;
+  }
+}
