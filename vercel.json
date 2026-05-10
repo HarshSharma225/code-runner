@@ -7,21 +7,19 @@
       "config": {
         "distDir": "build"
       }
+    },
+    {
+      "src": "frontend/api/**/*.js",
+      "use": "@vercel/node",
+      "config": {
+        "runtime": "nodejs18.x"
+      }
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/frontend/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
     }
-  ],
-  "functions": {
-    "frontend/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
